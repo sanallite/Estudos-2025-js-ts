@@ -97,4 +97,26 @@ var calcularArea = function (largura, altura) {
     if (altura === void 0) { altura = largura; }
     console.log(largura * altura);
 };
-/* Usando o valor de um parâmetro como o valor padrão de outro. */ 
+/* Usando o valor de um parâmetro como o valor padrão de outro. */
+function tresTiposUniao(tipo) {
+    return "Outra forma e escrever tipos de união.";
+}
+var id = '12';
+if (typeof id === 'number') {
+    console.log('Fazendo verificação de tipos com o operador typeof');
+}
+/* const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement; */
+/* const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas"); */
+/* Type assertion, afirmando um tipo que seja a versão mais, ou menos, específica daquele tipo. */
+var direcoes = "centro";
+var fazerAlgo = function (fnCallback) {
+    console.log(fnCallback('texto'), fnCallback.desc);
+};
+var novaFunc = function (argumento) {
+    return argumento;
+};
+/* fazerAlgo(novaFunc); */
+/* Não é possível chamar a função antes de definir a propriedade desc, pois o tipo de função esperado tem essa propriedade. */
+novaFunc.desc = 'padrão';
+fazerAlgo(novaFunc);
+/* Agora é possível chamá-la */ 

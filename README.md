@@ -10,7 +10,6 @@ Também aprendendo a programar em Typescript.
 * Formatação de datas utilizando métodos nativos e o módulo ``date-fns``
 
 ### TypeScript:
-* Anotação de tipo, aliases de tipo e interfaces.
+* Anotação de tipo, tipos literais, aliases de tipo e interfaces.
 * Assinatura de funções, classes normais e abstratas.
-* Introdução a enumeradores.
-* Introdução a tipos genéricos.
+* Introdução a enumeradores, tipos genéricos, assinaturas de chamada.

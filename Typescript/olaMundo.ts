@@ -181,3 +181,46 @@ const calcularArea = (largura: number, altura: number = largura): void => {
     console.log(largura * altura);
 }
 /* Usando o valor de um parâmetro como o valor padrão de outro. */
+
+function tresTiposUniao(tipo: 
+    | string
+    | number
+    | boolean
+) {
+    return "Outra forma e escrever tipos de união."
+}
+
+let id = '12';
+
+if ( typeof id === 'number' ) {
+    console.log('Fazendo verificação de tipos com o operador typeof');
+}
+
+/* const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement; */
+/* const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas"); */
+/* Type assertion, afirmando um tipo que seja a versão mais, ou menos, específica daquele tipo. */
+
+let direcoes: "esquerda" | "centro" | "direita" = "centro";
+/* Tipos literais, */
+/* direcoes = "right"; Erro. Só podem ser atribuídos os valores definidos no tipo de união. */
+
+/* Assinaturas de chamada, para funções que têm propriedades. */
+type FuncaoDescrita = {
+    desc: string,
+    (arg: string): void
+}
+
+const fazerAlgo = (fnCallback: FuncaoDescrita) => {
+    console.log(fnCallback('texto'), fnCallback.desc);
+}
+
+const novaFunc = (argumento: string) => {
+    return argumento;
+}
+
+/* fazerAlgo(novaFunc); */
+/* Não é possível chamar a função antes de definir a propriedade desc, pois o tipo de função esperado tem essa propriedade. */
+
+novaFunc.desc = 'padrão';
+fazerAlgo(novaFunc);
+/* Agora é possível chamá-la */
