@@ -16,7 +16,7 @@ var outroResultado = reduzir(numArr);
 console.log(resultado, outroResultado);
 var encontrarMaior = function (array) { };
 /* Usando a síntaxe de função de seta. */
-/* "A", uma letra genérica, representa o "parâmetro de tipo" */
+/* "A", uma letra genérica, representa o "parâmetro de tipo", que também pode ser uma palavra. */
 var Generica = /** @class */ (function () {
     function Generica(valor) {
         this.valor = valor;
@@ -61,4 +61,10 @@ var casa = {
 /* Também é possível usar tipos genéricos em interfaces. */
 function combinar() { }
 /* Também é possível usar mais de um tipo genérico. */
-/* A utilização de tipos genéricos é um tópico amplo, que também utiliza as outras funcionalidades do TypeScript, preciso continuar aprendendo mais sobre isso ao longo do tempo. */ 
+/* A utilização de tipos genéricos é um tópico amplo, que também utiliza as outras funcionalidades do TypeScript, preciso continuar aprendendo mais sobre isso ao longo do tempo. */
+/* Regras para escrever boas funções com tipos genéricos:
+    Quando possível, use o parâmetro de tipo em sí em vez de restringí-lo.
+    Sempre escreva o minímo possível de parâmetros de tipo.
+    Se um parâmetro de tipo só aparece em uma localização, ele não é necessário.
+    Quando escrever uma função com um callback, nunca escreva um parâmetro opcional a não ser que você planeja chamar a função sem passar aquele argumento.
+*/ 

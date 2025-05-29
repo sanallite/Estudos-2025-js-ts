@@ -119,4 +119,33 @@ var novaFunc = function (argumento) {
 /* Não é possível chamar a função antes de definir a propriedade desc, pois o tipo de função esperado tem essa propriedade. */
 novaFunc.desc = 'padrão';
 fazerAlgo(novaFunc);
-/* Agora é possível chamá-la */ 
+/* Definindo os possíveis parâmetros, assim podemos chamar essa mesma função com um ou três argumentos, mas não dois. */
+function criarData(diaOuTimestamp, mes, ano) {
+    if (mes !== undefined && ano !== undefined) {
+        return new Date(ano, mes, diaOuTimestamp);
+    }
+    else {
+        return new Date(diaOuTimestamp);
+    }
+}
+/* Implementação da função com uma assinatura compatível. */
+var hoje = criarData(26, 5, 2025);
+var dataQualquer = criarData(12345678);
+/* A assinatura da implementação não é visível para fora, quando escrever uma função com sobrecargas, você deve ter sempre duas ou mais assinaturas antes da implementação da função. A compatibilidade da implementação com a assinatura também depende de usar os mesmos tipos nos parâmetros e no retorno. */
+/* Sempre prefira parâmetros com tipos de união em vez de sobrecargas quando possível. */
+/* Tipo unknown. Representa qualquer valor, mas não é possível fazer qualquer coisa com um valor unknown. */
+var a = 'A';
+/* a.teste(); Erro. Não se sabe o tipo da variável para saber se ela tem essa propridade chamável. Se o tipo fosse any, essa chamada não teria erro. */
+/* Tipo never. Representa valores que nunca são observados. Num tipo de retorno significa que a função joga uma exceção ou termina a execução do programa. */
+function fail(msg) {
+    throw new Error(msg);
+}
+/* Podemos definir funções com um número ilimitado de parâmetros utilizando rest parameters. O tipo inplícito desses parâmetros é sempre any[] */
+var multiplicar = function (numero) {
+    var multiplicadores = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        multiplicadores[_i - 1] = arguments[_i];
+    }
+    return multiplicadores.map(function (nAtual) { return numero * nAtual; });
+};
+console.log(multiplicar(5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));

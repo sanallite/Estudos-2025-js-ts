@@ -224,3 +224,41 @@ const novaFunc = (argumento: string) => {
 novaFunc.desc = 'padrão';
 fazerAlgo(novaFunc);
 /* Agora é possível chamá-la */
+
+/* Assinaturas de funções overload */
+function criarData(timestamp: number): Date;
+function criarData(dia: number, mes: number, ano: number): Date;
+/* Definindo os possíveis parâmetros, assim podemos chamar essa mesma função com um ou três argumentos, mas não dois. */
+
+function criarData(diaOuTimestamp: number, mes?: number, ano?: number): Date {
+    if ( mes !== undefined && ano !== undefined ) {
+        return new Date(ano, mes, diaOuTimestamp);
+    }
+
+    else {
+        return new Date(diaOuTimestamp);
+    }
+}
+/* Implementação da função com uma assinatura compatível. */
+
+let hoje = criarData(26, 5, 2025);
+let dataQualquer = criarData(12345678);
+
+/* A assinatura da implementação não é visível para fora, quando escrever uma função com sobrecargas, você deve ter sempre duas ou mais assinaturas antes da implementação da função. A compatibilidade da implementação com a assinatura também depende de usar os mesmos tipos nos parâmetros e no retorno. */
+
+/* Sempre prefira parâmetros com tipos de união em vez de sobrecargas quando possível. */
+
+/* Tipo unknown. Representa qualquer valor, mas não é possível fazer qualquer coisa com um valor unknown. */
+const a: unknown = 'A';
+/* a.teste(); Erro. Não se sabe o tipo da variável para saber se ela tem essa propridade chamável. Se o tipo fosse any, essa chamada não teria erro. */
+
+/* Tipo never. Representa valores que nunca são observados. Num tipo de retorno significa que a função joga uma exceção ou termina a execução do programa. */
+function fail(msg: string): never {
+  throw new Error(msg);
+}
+
+/* Podemos definir funções com um número ilimitado de parâmetros utilizando rest parameters. O tipo inplícito desses parâmetros é sempre any[] */
+const multiplicar = (numero: number, ... multiplicadores: number[]): number[] => 
+    multiplicadores.map(nAtual => numero * nAtual)
+
+console.log(multiplicar(5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
