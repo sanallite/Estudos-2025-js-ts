@@ -262,3 +262,13 @@ const multiplicar = (numero: number, ... multiplicadores: number[]): number[] =>
     multiplicadores.map(nAtual => numero * nAtual)
 
 console.log(multiplicar(5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+/* Desestruturação de parâmetros. Desempacotar objetos, transformando as propriedades em um ou mais variáveis locais. */
+type TresNumerosABC = { a: number, b: number, c: number };
+
+function somarTres({a, b, c}: TresNumerosABC) {
+    return a+b+c;
+}
+
+/* console.log(somarTres({1,23,10})); Erro, o objeto precisa ter as propriedades a, b e c, assim como o objeto ma definição de parâmetros */
+console.log(somarTres({a: 12, b: 2, c: 4}));

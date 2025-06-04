@@ -149,3 +149,9 @@ var multiplicar = function (numero) {
     return multiplicadores.map(function (nAtual) { return numero * nAtual; });
 };
 console.log(multiplicar(5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+function somarTres(_a) {
+    var a = _a.a, b = _a.b, c = _a.c;
+    return a + b + c;
+}
+/* console.log(somarTres({1,23,10})); Erro, o objeto precisa ter as propriedades a, b e c, assim como o objeto ma definição de parâmetros */
+console.log(somarTres({ a: 12, b: 2, c: 4 }));
