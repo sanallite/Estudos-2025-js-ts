@@ -272,3 +272,24 @@ function somarTres({a, b, c}: TresNumerosABC) {
 
 /* console.log(somarTres({1,23,10})); Erro, o objeto precisa ter as propriedades a, b e c, assim como o objeto ma definição de parâmetros */
 console.log(somarTres({a: 12, b: 2, c: 4}));
+
+/* Tipos de tupla. Uma forma do tipo Array que sabe quantos elementos ele possuí e qual é o tipo de cada um deles nas suas posições específicas. */
+type duasStrUmNum = [string, string, number];
+
+const usarOsTuples = (valores: duasStrUmNum) => {
+    const a = valores[0];
+    const b = valores[1];
+    /* Tipo string */
+
+    const c = valores[2];
+    /* Tipo number */
+}
+
+usarOsTuples(['ola', 'mundo', 2026])
+/* O destino exige os três argumentos. */
+
+const usarOsTuplesReadOnly = (valores: readonly [string, number]) => {
+    /* O modificador de tipo 'readonly' só é permitido em tipos literais de matriz e tupla. Por isso não é possível colocar 'duasStrUmNum' da função acima como 'readonly'. */
+
+    /* valores[0] = 'a'; Erro. Não é possível atribuir em valores somente leitura. */
+}
