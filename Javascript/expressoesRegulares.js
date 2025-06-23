@@ -84,6 +84,7 @@ const extensaoFinal = /^[a-zA-Z]{2,}$/;
     - Deve ter pelo menos 2 letras após o ponto final.
 
  ? = Corresponde a expressão que o precede repetido 0 ou 1 vez. Equivalente à {0,1}.
+ () = Parênteses de captura, pesquisam a correspondência e a memorizam.
 */
 
 // Combinando tudo isso em uma função que testa cada parte:
@@ -130,3 +131,43 @@ function validarEmailCompleto(email) {
 }
 
 console.log('Terceiro teste: ', validarEmailCompleto(email));
+
+/* Fazendo buscas com match. */
+
+let texto = "Tenho 25 anos e moro na rua 123";
+const numerosRegex = /\d+/g; 
+/* 
+ \d = dígito
+ g = global (todas o ocorrências) 
+*/
+
+/* match() retorna um array com todas as ocorrências */
+const numeros = texto.match(numerosRegex);
+console.log(numeros);
+
+/* Buscando a posição da primeira ocorrência com search. */
+
+texto = "O sabiá sabia assobiar"
+console.log(texto.search(/sabia/))
+/* Posição 8, inluindo os espaços */
+
+/* Substituindo com replace. */
+
+let cpf = process.argv[3] || "";
+
+const expressãoCPF = /(\d{3})(\d{3})(\d{3})(\d{2})/
+/* Os grupos de digitos são capturados, assim dividindo-os  */
+
+if ( cpf && cpf.length === 11 ) {
+    cpf = cpf.replace(expressãoCPF, (matchCompleto, primeiroGrupo, segundoGrupo, terceiroGrupo, quartoGrupo, posicao, stringOriginal) => {
+        return `${primeiroGrupo}.${segundoGrupo}.${terceiroGrupo}-${quartoGrupo}`
+        /* Ao utilizar uma função como o segundo parâmetro do método replace, você tem mais liberdade para lidar com o que foi encontrado pela expressão, com esta função recebendo os parâmetros indicados acima  */
+    });
+
+    console.log(cpf);
+    /* Exibindo o valor formato com a pontuação, definida no template literal retornado. */
+}
+
+else {
+    console.log('Digite um valor válido com 11 números.')
+}

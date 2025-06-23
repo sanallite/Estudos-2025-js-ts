@@ -1,14 +1,17 @@
 # Aprendendo JavaScript e TypeScript
 
-Se aprofundando em conceitos e funcionalidades do Javascript e treinando.
+Se aprofundando em conceitos e funcionalidades do JavaScript e treinando.
 
-Também aprendendo a programar em Typescript.
+Também aprendendo a programar utilizando TypeScript.
 
 ## Conteúdos Realizados:
 ### JavaScript:
 * Uso do terminal do Node.js para enviar argumentos para o script processar.
 * Formatação de datas utilizando métodos nativos e o módulo ``date-fns``
-* Praticando Expressões Regulares: Testando e-mails.
+* Praticando Expressões Regulares: 
+   * Testando e-mails com test.
+   * Buscando por padrões com match e search.
+   * Formatando CPFs com replace.
 
 ### TypeScript:
 * Anotação de tipo, tipos literais, aliases de tipo e interfaces.
