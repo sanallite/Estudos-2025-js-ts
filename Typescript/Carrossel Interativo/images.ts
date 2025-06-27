@@ -3,7 +3,9 @@ const imagens: string[] = [
     "img/paofrances.jpg",
     "img/paobrioche.jpg",
     "img/paoitaliano.webp",
-    "img/paoaustraliano.jpg"
+    "img/paoaustraliano.jpg",
+    "img/croiassant.webp",
+    "img/baguette.jpeg"
 ]
 
 export default imagens

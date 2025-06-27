@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrossel de Fotos</title>
     <script type="module" src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -15,12 +16,16 @@
         <div class="imagem">
             <img src="">
 
+            <div class="linhaFundo">
+                <div class="linhaFrente"></div>
+            </div>
+
             <div>
-                <p class="estado"></p>
+                <p class="estado" hidden></p>
             </div>
         </div>
 
-        <div>
+        <div class="botoes">
             <button class="play">Play</button>
             <button class="pause" disabled='true'>Pause</button>
             <button class="anterior">Anterior</button>

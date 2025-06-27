@@ -1,0 +1,92 @@
+body {
+    background-color: blanchedalmond;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px gray;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: 0 0 5px gray;
+    border-width: 0;
+    border-radius: 0.5rem;
+    width: 10%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+button:hover {
+    background-color: chocolate;
+    color: white;
+}
+
+div.imagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* Se adapta ao tamanho da imagem */
+    margin: auto auto 1rem auto;
+}
+
+div.linhaFundo {
+    height: 1rem;
+    width: 100%;
+    background-color: chocolate;
+    box-shadow: 0 0 5px gray;
+    border-radius: 0.25rem;
+}
+
+div.linhaFrente {
+    height: 100%;
+    background-color: white;
+    border-radius: 0.25rem;
+    transition: width 0.5s ease-out;
+    /* Sempre que a largura é alterada, essa transição é executada, fazendo a linha de frente preencher o espaço da linha de fundo gradualmente. */
+}
+
+p.estado {
+    box-shadow: 0 0 5px gray;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: chocolate;
+    color: white;
+}
+
+p.estado:hover {
+    background-color: white;
+    color: initial;
+}
+
+div.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.5;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.5s forwards;
+}

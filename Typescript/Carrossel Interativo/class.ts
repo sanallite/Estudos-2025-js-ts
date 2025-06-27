@@ -1,4 +1,4 @@
-/* Módulo com a lógica do carrossel */
+/* Módulo com a lógica do carrossel, é possível usar essa classe com qualquer vetor com strings. */
 
 class Carrossel {
     private readonly imagens: string[]

@@ -19,3 +19,4 @@ Também aprendendo a programar utilizando TypeScript.
 * Introdução a enumeradores, tipos genéricos, assinaturas de chamada, sobrecargas de funções, rest parameters, desestruturação de parâmetros, tipos de tupla.
 * Atividade - Cronômetro feito utilizando uma classe.
 * Atividade - Validação simples de um formulário utilizando enum e interface de objetos.
+* Atividade - Carrossel de imagens animado e interativo com scripts modulares.
