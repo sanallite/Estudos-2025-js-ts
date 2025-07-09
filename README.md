@@ -2,7 +2,7 @@
 
 Se aprofundando em conceitos e funcionalidades do JavaScript e treinando.
 
-Também aprendendo a programar utilizando TypeScript.
+Também aprendendo a programar utilizando TypeScript e React.
 
 ## Conteúdos Realizados:
 ### JavaScript:
@@ -20,3 +20,6 @@ Também aprendendo a programar utilizando TypeScript.
 * Atividade - Cronômetro feito utilizando uma classe.
 * Atividade - Validação simples de um formulário utilizando enum e interface de objetos.
 * Atividade - Carrossel de imagens animado e interativo com scripts modulares.
+
+### React:
+* Atividade da documentação oficial: Jogo da velha.
