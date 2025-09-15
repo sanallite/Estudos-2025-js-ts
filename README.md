@@ -23,3 +23,4 @@ Também aprendendo a programar utilizando TypeScript e React.
 
 ### React:
 * Atividade da documentação oficial: Jogo da velha.
+* App gerado - Importação dinâmica de imagens usando import.meta.glob
