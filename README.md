@@ -24,3 +24,6 @@ Também aprendendo a programar utilizando TypeScript e React.
 ### React:
 * Atividade da documentação oficial: Jogo da velha.
 * App gerado - Importação dinâmica de imagens usando import.meta.glob
+
+### React Native:
+* App 'playground' para aprender e testar várias coisas.
