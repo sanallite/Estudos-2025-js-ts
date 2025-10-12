@@ -26,4 +26,5 @@ Também aprendendo a programar utilizando TypeScript e React.
 * App gerado - Importação dinâmica de imagens usando import.meta.glob
 
 ### React Native:
-* App 'playground' para aprender e testar várias coisas.
+* App 'Playground' para aprender e testar várias coisas.
+   * Praticando passagem de parâmetros e caminhos de imagem.
