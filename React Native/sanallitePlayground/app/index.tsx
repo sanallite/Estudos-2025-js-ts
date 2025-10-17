@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 
 import PropsStyleImagem from "./components/propsStyle";
+import FlatListColumns from "./components/FlatListColumns";
 
 export default function Index() {
   return (
@@ -11,9 +12,9 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      
 
-      <PropsStyleImagem />
+      <FlatListColumns />
     </View>
   );
 }
