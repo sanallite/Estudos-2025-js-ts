@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 import PropsStyleImagem from "./components/propsStyle";
 import FlatListColumns from "./components/FlatListColumns";
@@ -12,8 +12,6 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      
-
       <FlatListColumns />
     </View>
   );

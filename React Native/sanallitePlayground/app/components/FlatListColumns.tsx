@@ -1,3 +1,5 @@
+/* FlatList com uma exibição de cartões em linhas e colunas, com o máximo de colunas variando de acordo com a largura da tela. */
+
 import { View, Text, FlatList, StyleSheet, Dimensions } from 'react-native'
 
 interface ObjetoCartao {
@@ -22,7 +24,7 @@ const larguraTela = Dimensions.get('window').width
 const numeroColunas = Math.floor(larguraTela / LARGURA_MINIMA_CARTAO)
 
 export default function FlatListColumns() {
-    const ItemCartao = ({item}) => (
+    const ItemCartao = ({item}: { item: ObjetoCartao }) => (
         <View style={[estilos.cartao, { backgroundColor: item.cor }]}>
             <Text style={ estilos.textoCartao }>{item.titulo}</Text>
         </View>
@@ -69,18 +71,20 @@ const estilos = StyleSheet.create({
         padding: 8,
     },
     linha: {
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         marginBottom: 16
     },
     cartao: {
-        flex: 1,
+        width: 100,
+        height: 100,
         margin: 4,
         padding: 20,
         borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: 100,
+        // Sombreamento no Android
         elevation: 3,
+        // Sombreamento no IOS 
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,

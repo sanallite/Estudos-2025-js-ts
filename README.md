@@ -28,3 +28,4 @@ Também aprendendo a programar utilizando TypeScript e React.
 ### React Native:
 * App 'Playground' para aprender e testar várias coisas.
    * Praticando passagem de parâmetros e caminhos de imagem.
+   * Praticando FlatList com numColumns
