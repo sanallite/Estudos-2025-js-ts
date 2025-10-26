@@ -7,7 +7,7 @@ Também aprendendo a programar utilizando TypeScript e React.
 ## Conteúdos Realizados:
 ### JavaScript:
 * Uso do terminal do Node.js para enviar argumentos para o script processar.
-* Formatação de datas utilizando métodos nativos e o módulo ``date-fns``
+* Formatação de datas utilizando métodos nativos e o módulo ``date-fns``.
 * Praticando Expressões Regulares: 
    * Testando e-mails com test.
    * Buscando por padrões com match e search.
@@ -23,9 +23,10 @@ Também aprendendo a programar utilizando TypeScript e React.
 
 ### React:
 * Atividade da documentação oficial: Jogo da velha.
-* App gerado - Importação dinâmica de imagens usando import.meta.glob
+* App gerado - Importação dinâmica de imagens usando import.meta.glob.
 
 ### React Native:
 * App 'Playground' para aprender e testar várias coisas.
    * Praticando passagem de parâmetros e caminhos de imagem.
-   * Praticando FlatList com numColumns
+   * Praticando FlatList com numColumns.
+   * Usando um array com objetos para armazenar as props de TextInputs criados com map.

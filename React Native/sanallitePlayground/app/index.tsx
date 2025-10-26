@@ -1,7 +1,8 @@
 import { View } from "react-native";
 
-import PropsStyleImagem from "./components/propsStyle";
+import PropsStyleImagem from "./components/PropsStyle";
 import FlatListColumns from "./components/FlatListColumns";
+import MapTextInputs from "./components/MapTextInputs";
 
 export default function Index() {
   return (
@@ -12,7 +13,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <FlatListColumns />
+      <MapTextInputs />
     </View>
   );
 }
