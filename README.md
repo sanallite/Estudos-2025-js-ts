@@ -30,3 +30,4 @@ Também aprendendo a programar utilizando TypeScript e React.
    * Praticando passagem de parâmetros e caminhos de imagem.
    * Praticando FlatList com numColumns.
    * Usando um array com objetos para armazenar as props de TextInputs criados com map.
+   * Praticando o uso do componente externo DateTimePicker.
