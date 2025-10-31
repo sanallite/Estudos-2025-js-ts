@@ -31,3 +31,6 @@ Também aprendendo a programar utilizando TypeScript e React.
    * Praticando FlatList com numColumns.
    * Usando um array com objetos para armazenar as props de TextInputs criados com map.
    * Praticando o uso do componente externo DateTimePicker.
+
+### CSS:
+* Site gerado - Exemplos de transições.

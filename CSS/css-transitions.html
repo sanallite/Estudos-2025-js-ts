@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de CSS Transitions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        .exemplo {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        /* Exemplo 1: Transição de cor */
+        .box-cor {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            transition: background-color 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .box-cor:hover {
+            background-color: #e74c3c;
+        }
+        
+        /* Exemplo 2: Transição de tamanho */
+        .box-tamanho {
+            width: 100px;
+            height: 100px;
+            background-color: #2ecc71;
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+        }
+        
+        .box-tamanho:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Exemplo 3: Transição com múltiplas propriedades */
+        .box-multiplo {
+            width: 100px;
+            height: 100px;
+            background-color: #9b59b6;
+            border-radius: 0;
+            transition: 
+                background-color 0.5s ease-in-out,
+                border-radius 0.8s ease-in-out,
+                transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .box-multiplo:hover {
+            background-color: #f1c40f;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        
+        /* Exemplo 4: Transição com delay */
+        .box-delay {
+            width: 100px;
+            height: 100px;
+            background-color: #e67e22;
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease-in-out 0.2s; /* 0.2s é o delay */
+            cursor: pointer;
+        }
+        
+        .box-delay:hover {
+            left: 100px;
+        }
+        
+        /* Exemplo 5: Diferentes timing functions */
+        .container-timing {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .box-timing {
+            width: 80px;
+            height: 80px;
+            background-color: #34495e;
+            position: relative;
+            top: 0;
+            cursor: pointer;
+        }
+        
+        .timing-group:hover .box-timing {
+            top: 50px;
+        }
+        
+        .timing-linear {
+            transition: top 1.5s linear;
+        }
+        
+        .timing-ease {
+            transition: top 1.5s ease;
+        }
+        
+        .timing-ease-in {
+            transition: top 1.5s ease-in;
+        }
+        
+        .timing-ease-out {
+            transition: top 1.5s ease-out;
+        }
+        
+        .timing-ease-in-out {
+            transition: top 1.5s ease-in-out;
+        }
+        
+        .timing-cubic {
+            transition: top 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .timing-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+        }
+        
+        .timing-label {
+            font-size: 12px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        /* Exemplo 6: Transição de sombra e opacidade */
+        .box-sombra {
+            width: 120px;
+            height: 80px;
+            background-color: #1abc9c;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0.8;
+            transition: 
+                box-shadow 0.3s ease-out,
+                opacity 0.5s ease-in;
+            cursor: pointer;
+        }
+        
+        .box-sombra:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            opacity: 1;
+        }
+        
+        .explicacao {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplos de CSS Transitions</h1>
+    <p>Passe o mouse sobre os elementos para ver as transições.</p>
+    
+    <div class="exemplo">
+        <h2>1. Transição de Cor</h2>
+        <div class="container">
+            <div class="box-cor"></div>
+        </div>
+        <div class="explicacao">
+            A cor muda suavemente de azul para vermelho quando você passa o mouse sobre o elemento.
+            <br>
+            <code>transition: background-color 0.5s ease-in-out;</code>
+        </div>
+    </div>
+    
+    <div class="exemplo">
+        <h2>2. Transição de Tamanho (Scale)</h2>
+        <div class="container">
+            <div class="box-tamanho"></div>
+        </div>
+        <div class="explicacao">
+            O elemento aumenta 20% de tamanho (escala) quando você passa o mouse sobre ele.
+            <br>
+            <code>transition: transform 0.3s ease-out;</code>
+        </div>
+    </div>
+    
+    <div class="exemplo">
+        <h2>3. Transições Múltiplas</h2>
+        <div class="container">
+            <div class="box-multiplo"></div>
+        </div>
+        <div class="explicacao">
+            Várias propriedades são animadas simultaneamente: cor, formato (border-radius) e rotação.
+            <br>
+            <code>transition: background-color 0.5s, border-radius 0.8s, transform 0.3s;</code>
+        </div>
+    </div>
+    
+    <div class="exemplo">
+        <h2>4. Transição com Delay</h2>
+        <div class="container">
+            <div class="box-delay"></div>
+        </div>
+        <div class="explicacao">
+            A animação começa após um pequeno atraso de 0.2 segundos.
+            <br>
+            <code>transition: left 0.5s ease-in-out 0.2s;</code>
+        </div>
+    </div>
+    
+    <div class="exemplo">
+        <h2>5. Diferentes Timing Functions</h2>
+        <p>Passe o mouse sobre toda a área para comparar diferentes funções de timing.</p>
+        <div class="container-timing">
+            <div class="timing-group">
+                <div class="box-timing timing-linear"></div>
+                <div class="timing-label">linear</div>
+            </div>
+            <div class="timing-group">
+                <div class="box-timing timing-ease"></div>
+                <div class="timing-label">ease</div>
+            </div>
+            <div class="timing-group">
+                <div class="box-timing timing-ease-in"></div>
+                <div class="timing-label">ease-in</div>
+            </div>
+            <div class="timing-group">
+                <div class="box-timing timing-ease-out"></div>
+                <div class="timing-label">ease-out</div>
+            </div>
+            <div class="timing-group">
+                <div class="box-timing timing-ease-in-out"></div>
+                <div class="timing-label">ease-in-out</div>
+            </div>
+            <div class="timing-group">
+                <div class="box-timing timing-cubic"></div>
+                <div class="timing-label">cubic-bezier</div>
+            </div>
+        </div>
+        <div class="explicacao">
+            Diferentes funções de timing alteram a velocidade da animação ao longo do tempo.
+        </div>
+    </div>
+    
+    <div class="exemplo">
+        <h2>6. Sombra e Opacidade</h2>
+        <div class="container">
+            <div class="box-sombra"></div>
+        </div>
+        <div class="explicacao">
+            A sombra aumenta e a opacidade muda ao passar o mouse, com tempos diferentes para cada propriedade.
+            <br>
+            <code>transition: box-shadow 0.3s ease-out, opacity 0.5s ease-in;</code>
+        </div>
+    </div>
+
+</body>
+</html>
