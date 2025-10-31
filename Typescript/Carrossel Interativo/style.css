@@ -56,6 +56,24 @@ div.linhaFrente {
     border-radius: 0.25rem;
     transition: width 0.5s ease-out;
     /* Sempre que a largura é alterada, essa transição é executada, fazendo a linha de frente preencher o espaço da linha de fundo gradualmente. */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho que se move durante a transição */
+div.linhaFrente::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(210, 105, 30, 0.4), transparent);
+    transition: left 0.8s ease-out;
+}
+
+div.linhaFrente.animando::after {
+    left: 100%; 
 }
 
 p.estado {

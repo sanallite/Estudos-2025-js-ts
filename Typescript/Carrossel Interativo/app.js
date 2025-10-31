@@ -69,8 +69,14 @@ const proximaImagem = () => {
 const atualizarBarraProgresso = () => {
     const item = indiceImg + 1;
     const porcentagem = (item / imagens.length) * 100;
+    linhaFrente.classList.add('animando');
+    /* Adicionando a classe para o efeito de brilho */
     linhaFrente.style.width = `${porcentagem}%`;
     /* A porcentagem do item atual em relação ao tamanho do vetor dita a largura do elemento. */
+    setTimeout(() => {
+        linhaFrente.classList.remove('animando');
+    }, 800); // Mesmo tempo da transição
+    /* Removendo a classe após a animação terminar */
 };
 /* Estado inicial da página */
 imagem.setAttribute('src', imagens[indiceImg]);
