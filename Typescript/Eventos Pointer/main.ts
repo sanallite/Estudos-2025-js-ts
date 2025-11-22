@@ -2,10 +2,11 @@
 const carrossel = document.getElementById('carousel') as HTMLDivElement
 const track = document.getElementById('track') as HTMLDivElement
 const containerIndicadores = document.getElementById('indicators') as HTMLDivElement
+const slides = document.getElementsByClassName('carousel-slide')
 
 /* Estado do Carrossel */
 let indexAtual: number = 0
-const totalSlides: number = 5
+const totalSlides: number = slides.length
 const THRESHOLD: number = 50
 /* Threshold mínimo, em píxels, para considerar um swipe válido. */
 
@@ -33,7 +34,8 @@ const updateDebug = (dados: {
     startX?: number,
     currentX?: number,
     displacement?: number,
-    direction?: string
+    direction?: string,
+    translateX: number
 }) => {
     if ( dados.startX !== undefined ) {
         document.getElementById('startX')!.textContent = Math.round(dados.startX).toString()
@@ -51,6 +53,8 @@ const updateDebug = (dados: {
         const disp: string = Math.round(dados.displacement).toString()
         document.getElementById('displacement')!.textContent = `${disp}px`
     }
+
+    document.getElementById('translateX')!.textContent = dados.translateX.toString()
 }
 
 /* Evento: pointerdown. O início da interação */
@@ -66,7 +70,8 @@ carrossel.addEventListener('pointerdown', event => {
         startX: startX,
         currentX: currentX,
         direction: '-',
-        displacement: 0
+        displacement: 0,
+        translateX: translateX
     })
 })
 
@@ -77,6 +82,10 @@ carrossel.addEventListener('pointermove', event => {
     currentX = event.clientX
     const diferenca = currentX - startX
     const movimento = translateX + diferenca
+    /* Exemplo indo do slide 2 para o 3: 
+    translateX do slide 2 = -740, 
+    diferenca = -219px, 
+    movimento se torna = -959 e a direção vai para a esquerda. */
 
     /* Mover o track junto com o ponteiro */
     track.style.transform = `translateX(${movimento}px)`
@@ -88,7 +97,8 @@ carrossel.addEventListener('pointermove', event => {
     updateDebug({
         currentX: currentX,
         displacement: diferenca,
-        direction: direcao
+        direction: direcao,
+        translateX: translateX
     })
 })
 
@@ -119,6 +129,41 @@ carrossel.addEventListener('pointerup', event => {
     updateDebug({
         direction: Math.abs(diferenca) > THRESHOLD ?
         ( diferenca > 0 ? '✓ Anterior' : '✓ Próximo' ) :
-        '✗ Sem mudança'
+        '✗ Sem mudança',
+        translateX: translateX
     })
 })
+
+/* Evento: pointerleave. Cancelar se o ponteiro sair da área. */
+carrossel.addEventListener('pointerleave', () => {
+    if ( isDragging ) {
+        isDragging = false
+        carrossel.classList.remove('grabbing')
+        carrossel.classList.remove('dragging')
+        irParaSlide(indexAtual)
+    }
+})
+
+/* Função de ir para um slide específico. */
+const irParaSlide = (novoIndex: number) => {
+    indexAtual = novoIndex
+    translateX = -indexAtual * carrossel.offsetWidth
+    /* Exemplo indo do slide 3 para 4:
+    -indexAtual = -3 
+    offsetWidth = 740px (tamanho do contâiner)
+    -3 * 740 = -2220 */
+
+    track.style.transform = `translateX(${translateX}px)`
+
+    /* Atualizar os indicadores */
+    document.querySelectorAll('.indicator').forEach((indicador, indice) => {
+        indicador.classList.toggle('active', indice === indexAtual)
+    })
+
+    document.getElementById('currentSlide')!.textContent = (indexAtual + 1).toString()
+
+    /* Recalcular a posição ao redimensionar. */
+    window.addEventListener('resize', () => {
+        irParaSlide(indexAtual)
+    })
+}

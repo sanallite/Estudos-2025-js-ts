@@ -20,6 +20,7 @@ Também aprendendo a programar utilizando TypeScript e React.
 * Atividade - Cronômetro feito utilizando uma classe.
 * Atividade - Validação simples de um formulário utilizando enum e interface de objetos.
 * Atividade - Carrossel de imagens animado e interativo com scripts modulares.
+* Site gerado - Uso de eventos de ponteiro e sua posição na tela através em um carrossel com swipe.
 
 ### React:
 * Atividade da documentação oficial: Jogo da velha.
