@@ -26,6 +26,7 @@ Também aprendendo a programar utilizando TypeScript e React.
 * Atividade da documentação oficial: Jogo da velha.
 * App gerado - Importação dinâmica de imagens usando import.meta.glob.
 * Atividade da documentação oficial do **Next.js**: Dashboard.
+* **Next.js** - App para testar coisas que serão utilizadas no projeto **Retro Home Page**
 
 ### React Native:
 * App 'Playground' para aprender e testar várias coisas.
